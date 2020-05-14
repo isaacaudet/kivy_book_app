@@ -1,0 +1,24 @@
+<TextInp>:
+    title: 'InputDialog'
+    auto_dismiss: False
+    id: test1
+
+    # Using relative layout to arrange properly
+    RelativeLayout:
+        orientation: 'vertical'
+        pos: self.pos
+
+        TextInput:
+            id: input
+            hint_text:'Enter ISBN:'
+            pos_hint: {'center_x': 4, 'center_y': 5}
+            size_hint: 4, 0.5
+            multiline: False
+            on_text_validate: app.isbn_lookup()
+
+        Button:
+            text: 'Capture'
+            pos_hint: {'center_x': 4, 'center_y': 3}
+            height: '20dp'
+            on_release: app.capture()
+
